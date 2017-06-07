@@ -1,0 +1,39 @@
+  <section>
+      <div layout="row" layout-padding layout-fill layout-align="space-around start">
+          <!-- Quick Links Container -->
+          <div flex="20" md-whiteframe="4">A</div>
+          <!-- Posts Container -->
+          <div flex="55" md-whiteframe="4">
+              <div layout="row" layout-padding layout-fill layout-wrap>
+                <form name="$ctrl.createNewFeedForm" flex="100">
+                    <div layout="row" layout-fill layout-wrap>
+                        <md-input-container flex="100">
+                            <textarea ng-model="$ctrl.feed.text" rows="4"></textarea>
+                        </md-input-container>
+                        <div layout="row" flex="100">
+                            <md-button class="md-icon-button md-primary" aria-label="Settings" ng-click='' ngf-select="$ctrl.upload($files)" ng-model="$ctrl.feed.file"
+                            ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">
+                                <md-icon md-svg-icon="images/icons/ic_attach_file_black_24px.svg"></md-icon>
+                            </md-button>
+
+                            <md-button class="md-icon-button md-primary" aria-label="Settings" ng-click=''>
+                                <md-icon md-svg-icon="images/icons/ic_mode_edit_black_24px.svg"></md-icon>
+                            </md-button>
+
+                            <span flex></span>
+                            <md-button class="md-primary md-raised" aria-label="Settings" ng-click='$ctrl.submitFeed();'>
+                                Submit
+                            </md-button>
+
+                            <md-button class="md-raised" aria-label="Settings" ng-click=''>
+                                Cancel
+                            </md-button>
+                        </div>   
+                    </div>    
+                </form>    
+              </div>
+          </div>
+          <!-- Ads Container -->
+          <div flex="20" md-whiteframe="4">C</div>
+      </div>    
+  </section>

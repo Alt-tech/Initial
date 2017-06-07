@@ -1,0 +1,7 @@
+<md-toolbar layout="row" layout-align='start center'>
+    <md-button class="md-icon-button md-primary" aria-label="Settings" ng-click='$ctrl.sidenavIsOpen = !$ctrl.sidenavIsOpen' ng-if="$ctrl.isLoggedIn">
+        <md-icon md-svg-icon="images/icons/ic_menu_white_24px.svg"></md-icon>
+      </md-button>
+     <span flex></span>
+     <right-dropdown logged-in-user="$ctrl.loggedInName" ng-if="$ctrl.isLoggedIn"></right-dropdown>          
+</md-toolbar>                

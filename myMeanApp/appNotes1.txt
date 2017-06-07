@@ -1,0 +1,38 @@
+.bowerrc file is for telling where you want your bower_components folder to be.
+
+bin/www is for telling the port number and creating http server for node.
+
+Note: Never keep an app's name as 'app', somehow it doesn't work
+
+31-05-2017: I myself have created the folder structure for this project.
+
+<!------------------------------------------------------------------------------>
+Implementing User Authentication:
+
+Url: https://www.sitepoint.com/user-authentication-mean-stack/
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+For sending emails: we have used nodemailer module
+https://nodemailer.com/about/
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+CRUD operations:
+https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+creating db backup and restoring the same
+https://www.tutorialspoint.com/mongodb/mongodb_create_backup.htm
+<!------------------------------------------------------------------------------>
+Url: https://ciphertrick.com/2015/12/07/file-upload-with-angularjs-and-nodejs/
+We will use multer to handle file upload in our express app. Multer is a popular NodeJS middleware package for handling file uploads.
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+Url: http://www.sebastianseilund.com/nodejs-async-in-practice
+Use of async module
+
+We used async module so that we can hold the rest call response to be sent from the server until and unless all async calls are resolved (in our case each async call was for loading the image file and converting it to base 64).
+
+Also one important observation was the final callback will not be called until and unless the callback method for each iteration will not be called.(callback(null)).
+The null parameter means there is no error.
+Url: https://stackoverflow.com/questions/30150751/async-each-final-callback-is-not-executed
+<!------------------------------------------------------------------------------>

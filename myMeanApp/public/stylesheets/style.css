@@ -1,0 +1,14 @@
+body {
+  /*padding: 50px;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.leftSideNav{
+    min-height: -moz-calc(100vh - 64px);
+    min-height: calc(100vh - 64px);
+    min-height: -webkit-calc(100vh);
+}

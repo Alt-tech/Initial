@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myNodeAngularApp">
+    <head>
+        <base href="/"/>
+        <title>Integrating AngularJS with NodeJS</title>
+        <script src="javascripts/libraries/angular.js"></script>
+        <script src="javascripts/libraries/angular-route.js"></script> 
+        <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>-->
+        <script src="javascripts/module.js" type="text/javascript"></script> <!-- not created yet -->
+    </head>
+    <body >
+        <!--<div ng-controller="myController">
+		<ul ng-repeat="item in data">
+			<li>Name: {{item.name}}, City: {{item.city}}</li>
+		</ul>
+        </div>-->
+        <div ng-controller="myController">
+          
+        <h1>This is me</h1>
+        <p>Data coming from database</p>
+        <ul>
+         <li ng-repeat="record in data">{{record.id}}. {{record.name}}</li>
+         </ul>   
+        <ng-view></ng-view>
+         </div> 
+    </body>
+</html>

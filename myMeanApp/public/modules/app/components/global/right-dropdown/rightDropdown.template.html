@@ -1,0 +1,27 @@
+ <md-menu md-position-mode="target-right target">
+      <md-button aria-label="menu" class="" ng-click="$mdMenu.open($event)">
+         Welcome {{$ctrl.loggedInUser}} <md-icon md-menu-origin md-svg-icon="images/icons/ic_arrow_drop_down_white_24px.svg"></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-click="">
+            <md-icon md-svg-icon="images/icons/ic_account_circle_black_24px.svg" md-menu-align-target></md-icon>
+            My Profile
+          </md-button>
+        </md-menu-item>
+         <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button  ng-click="$ctrl.gotoFeed()">
+            <md-icon md-svg-icon="images/icons/ic_settings_black_24px.svg"></md-icon>
+            My Feed
+          </md-button>
+        </md-menu-item>
+        <md-menu-divider></md-menu-divider>
+        <md-menu-item>
+          <md-button ng-click="$ctrl.logout()">
+            <md-icon md-svg-icon="images/icons/ic_settings_power_black_24px.svg"></md-icon>
+            Logout
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>

@@ -1,0 +1,146 @@
+Use Express framework for implementing nodejs backend.
+
+Use Router module of Express to maintain modularity of REST controllers.
+
+Url: https://expressjs.com/en/starter/generator.html
+Use the application generator tool, express-generator, to quickly create an application skeleton.
+$ npm install express-generator -g
+$ express --view=pug myapp
+$ cd myapp
+$ npm install
+set DEBUG=myapp:* & npm start
+
+Then load http://localhost:3000/
+
+If error comes for any of the module like express, morgan etc..
+execute npm install module_name(eg. express)
+execute npm install pug(view engine)
+
+To enable Routing via AngularJS in nodeJS application following steps has to be taken:
+Url: http://blog.thedigitalgroup.com/ujwalap/2015/06/12/angularjs-in-node-js-and-expressjs-framework/
+in App.js
+var routes = require('./routes'); //Configuring Backend to implement front end routing
+app.use(app.router);  //Configuring Backend to implement front end routing
+
+app.get('/', routes.index);
+
+app.get('*', routes.index);
+
+In index.js
+exports.index = function(req, res){
+  res.sendfile('.views/index.html');
+};
+
+Note: Do not use $locationProvider in ANgular(Mine does not work with it)
+
+<!------------------------------------------------------------------------------>
+
+You can require any js file, you just need to declare what you want to expose.
+
+// tools.js
+// ========
+module.exports = {
+  foo: function () {
+    // whatever
+  },
+  bar: function () {
+    // whatever
+  }
+};
+
+var zemba = function () {
+}
+And in your app file:
+
+// app.js
+// ======
+var tools = require('./tools');
+console.log(typeof tools.foo); // => 'function'
+console.log(typeof tools.bar); // => 'function'
+console.log(typeof tools.zemba); // => undefined
+
+<!------------------------------------------------------------------------------>
+
+<!------------------------------------------------------------------------------>
+URL: https://code.visualstudio.com/docs/nodejs/nodejs-tutorial
+Debugging your Express Application
+You will need to create a debugger configuration file launch.json for your Express application. Click on the Debug icon in the Activity Bar and then the Configure gear icon at the top of the Debug view to create a default launch.json file. Select the Node.js environment. When the file is first created, VS Code will look in package.json for a start script and will use that value as the program (which in this case is ${workspaceRoot}/bin/www) for the Launch Program configuration. A second Attach to Process configuration is also created to show you how to attach to a running Node.js application.
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/bin/www",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858
+        }
+    ]
+}
+Save the new file and make sure Launch Program is selected in the configuration dropdown at the top of the Debug view. Open app.js and set a breakpoint near the top of the file where the Express app object is created by clicking in the gutter to the left of the line number. Press F5 to start debugging the application. VS Code will start the server in a new terminal and hit the breakpoint we set. From there you can inspect variables, create watches, and step through your code.
+<!------------------------------------------------------------------------------>
+
+<!------------------------------------------------------------------------------>
+Difference between exports and module.exports Property
+
+module is a plain JavaScript object with an exports property. exports is a plain JavaScript variable that happens to be set to module.exports. At the end of your file, node.js will basically 'return' module.exports to the require function. A simplified way to view a JS file in Node could be this:
+
+var module = { exports: {} };
+var exports = module.exports;
+
+// your code
+
+return module.exports;
+If you set a property on exports, like exports.a = 9;, that will set module.exports.a as well because objects are passed around as references in JavaScript, which means that if you set multiple variables to the same object, they are all the same object; so then exports and module.exports are the same object.
+But if you set exports to something new, it will no longer be set to module.exports, so exports and  module.exports are no longer the same object.
+<!------------------------------------------------------------------------------>
+
+<!------------------------------------------------------------------------------>
+How to install MongoDB on system?
+URL: https://www.tutorialspoint.com/mongodb/mongodb_environment.htm
+Setting up MongoDB after install:
+https://blog.ajduke.in/2013/04/10/install-setup-and-start-mongodb-on-windows/
+
+We will use mongoose for data modelling in mongoDB
+Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+http://mongoosejs.com
+
+To run MongoDB we have to navigate to C:/Program Files/MongoDB/Server/3.4/bin and type cmd.
+Then type mongod --dbpath D:\Servers\Data --port 27017 (D:\Servers\data in my case)
+
+If you specify the logpath option, then logging will direct to that log file instead of showing up on standard console
+
+mongod --dbpath D:\Servers\Data --port 27017 --logpath D:\Servers\logs\mongod.log
+
+For running mongoDB as a service.
+Create mongodb.conf
+dbpath = D:\Servers\mongodb\data
+port = 27017
+logpath = D:\Servers\mongodb\logs\mongo.log
+
+and give the full path of file:
+mongod -f D:\Servers\mongodb\config\mongodb.conf
+
+command for MongoDB service
+mongod -f "D:\Servers\mongodb\config\mongodb.conf" --install -serviceName mdb27017 --serviceDisplayName "MongoDB Server Instance 27017" --serviceDescription "MongoDB Server Instance running on 27017"
+<!------------------------------------------------------------------------------>
+
+Tutorial for Mean.js
+http://www.bradoncode.com/tutorials/mean-stack-tutorial-part-3-database/
+
+<!------------------------------------------------------------------------------>
+What is socket.io and why do we use it?
+Url: https://stackoverflow.com/questions/18587104/what-is-the-major-scenario-to-use-socket-io
+
+We use it for real time applications such as chat applications so that when Person A is typing Person B should know that A is typing, so that can't be achieved using http or https calls because of the delay it causes and secondly the data packets are large in size so we use sockets for that which are fast and the data packets for these are small for transfer.
+<!------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------>
+
+<!------------------------------------------------------------------------------>

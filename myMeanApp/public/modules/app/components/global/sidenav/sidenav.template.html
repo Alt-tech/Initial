@@ -1,0 +1,20 @@
+<section layout="row" flex class="leftSideNav">
+<!--div layout="row" flex class="leftSideNav">-->             <!--md-is-open="$ctrl.isOpen"-->
+<md-sidenav md-component-id="left" class="md-sidenav-left"
+            md-is-locked-open="$ctrl.isOpen"
+            md-whiteframe="4"
+            md-disable-backdrop="true">
+            <md-toolbar>
+        <h1 class="md-toolbar-tools">MyApp</h1>
+      </md-toolbar>
+            <md-content>
+                Left Nav!
+            </md-content>
+  </md-sidenav>
+  <!--</div>-->
+    <!--<main-page-content flex></main-page-content>-->   
+    <md-content flex>
+    <menubar sidenav-is-open="$ctrl.isOpen"></menubar>
+    <main-page-content></main-page-content>
+</md-content>  
+</section>
