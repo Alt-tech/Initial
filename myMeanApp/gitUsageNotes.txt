@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/15381198/remove-credentials-from-git
+Go to credential manager and delete account from git, so that again a prompt will come for username and password.

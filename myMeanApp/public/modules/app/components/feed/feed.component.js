@@ -5,7 +5,9 @@
 
         templateUrl: '/modules/app/components/feed/feed.template.html',
         controller: FeedController,
-       
+        bindings: {
+            feeds: '<'
+        }
     });
     FeedController.$inject = ['Upload', '$http', 'storageService'];
     function FeedController(Upload, $http, storageService) {
@@ -45,6 +47,22 @@
             }).then(function (resp) {
             	console.log('upload successfull');
                 console.log(resp);
+
+                $http({
+                                method: 'GET',
+                                url: '/upload/getFeeds',
+                                headers: {
+                                    Authorization: 'Bearer '+ storageService.getFromStore('app-token') 
+                                }
+                            }).then(function(result){
+                               
+                                vm.feeds = result;
+
+                            },function(error){
+                                console.log('unable to get feeds from backend');
+                                
+                            })
+
             }, function (resp) {
                 console.log('Error in uploading');
                 console.log(resp);

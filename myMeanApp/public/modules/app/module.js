@@ -5,7 +5,7 @@ angular.module('my-app',['ngRoute','ngMaterial', 'ngAnimate', 'ngMessages', 'gri
             $locationProvider.hashPrefix(''); //Stops changing # to '%2f' in url
             $routeProvider.
                 when('/feed',{
-                    template: '<feed></feed>',
+                    template: '<feed feeds="$resolve.getFeeds"></feed>',
                     resolve: {
                         getFeeds: ['$http', 'storageService',function($http, storageService){
                             return $http({
@@ -17,9 +17,11 @@ angular.module('my-app',['ngRoute','ngMaterial', 'ngAnimate', 'ngMessages', 'gri
                             }).then(function(result){
                                
                                 console.log(result);
+                                return result;
 
                             },function(error){
                                 console.log('unable to get feeds from backend');
+                                return null;
                             })
                         }]
                     }

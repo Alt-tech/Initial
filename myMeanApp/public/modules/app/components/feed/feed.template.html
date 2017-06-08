@@ -30,8 +30,36 @@
                             </md-button>
                         </div>   
                     </div>    
-                </form>    
+                </form> 
+                <div flex="100" layout-wrap ng-repeat="singleFeed in $ctrl.feeds.data">
+                    <div flex="100">
+                    <md-button class="md-icon-button">
+                        <md-icon md-svg-icon="images/icons/ic_account_circle_black_48px.svg"></md-icon>
+                    </md-button>
+                    <span class="h3">{{singleFeed.name}}</span>   
+                    </div>
+                    <div flex="100" layout-margin>
+                        <span>{{singleFeed.text}}</span>
+                    </div>        
+                    <div flex="100" ng-show="singleFeed.imageUrl" layout-align="center center" layout="row">
+                        <img data-ng-src="data:image/jpg;base64,{{singleFeed.imageUrl}}" data-err-src=""/>
+                    </div>
+                    <div flex="100" layout="row" layout-align="space-between center">
+                    <md-button class="md-icon-button">
+                        <md-icon md-svg-icon="images/icons/ic_thumb_up_black_24px.svg"></md-icon>
+                    </md-button>
+
+                    <md-button class="md-icon-button">
+                        <md-icon md-svg-icon="images/icons/ic_thumb_down_black_24px.svg"></md-icon>
+                    </md-button>
+
+                    <md-button class="md-icon-button">
+                        <md-icon md-svg-icon="images/icons/ic_comment_black_24px.svg"></md-icon>
+                    </md-button>
+                    </div>    
+                    <md-divider></md-divider>    
               </div>
+          </div>
           </div>
           <!-- Ads Container -->
           <div flex="20" md-whiteframe="4">C</div>
